@@ -1,6 +1,5 @@
 package org.launchcode.techjobs_oo;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class Job {
@@ -9,10 +8,10 @@ public class Job {
     private static int nextId = 1;
 
     private String name;
-    private Employer employer;
-    private Location location;
-    private PositionType positionType;
-    private CoreCompetency coreCompetency;
+    private JobDataLine employer;
+    private JobDataLine location;
+    private JobDataLine positionType;
+    private JobDataLine coreCompetency;
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
@@ -65,7 +64,7 @@ public class Job {
         this.name = name;
     }
 
-    public Employer getEmployer() {
+    public JobDataLine getEmployer() {
         return employer;
     }
 
@@ -73,7 +72,7 @@ public class Job {
         this.employer = employer;
     }
 
-    public Location getLocation() {
+    public JobDataLine getLocation() {
         return location;
     }
 
@@ -81,7 +80,7 @@ public class Job {
         this.location = location;
     }
 
-    public PositionType getPositionType() {
+    public JobDataLine getPositionType() {
         return positionType;
     }
 
@@ -89,7 +88,7 @@ public class Job {
         this.positionType = positionType;
     }
 
-    public CoreCompetency getCoreCompetency() {
+    public JobDataLine getCoreCompetency() {
         return coreCompetency;
     }
 
@@ -102,6 +101,10 @@ public class Job {
     }
 
     public String toString() {
-        return "/nID: "+this.getId()+"/nName: "+name+"/nEmployer: "+employer+"/nLocation: "+location+"/nPosition Type: "+positionType+"/nCore Competency: "+coreCompetency+"/n";
+        if (location == null) {
+            return "\nOOPS! This Job doesn't seem to exist.\n";
+        } else {
+            return "\nID: "+this.getId()+"\nName: "+name+"\nEmployer: "+employer+"\nLocation: "+location+"\nPosition Type: "+positionType+"\nCore Competency: "+coreCompetency+"\n";
+        }
     }
 }

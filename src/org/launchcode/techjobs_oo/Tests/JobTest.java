@@ -49,11 +49,16 @@ public class JobTest {
 
     @Test
     public void testToStringFormat() {
-        assertEquals("/nID: 3/nName: Product Tester/nEmployer: ACME/nLocation: Desert/nPosition Type: Quality Control/nCore Competency: Persistence/n", testJob.toString());
+        assertEquals("\nID: 3\nName: Product Tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality Control\nCore Competency: Persistence\n", testJob.toString());
     }
 
     @Test
     public void testToStringEmptyField() {
-        assertEquals("/nID: 5/nName: Data not available/nEmployer: Data not available/nLocation: Data not available/nPosition Type: Data not available/nCore Competency: Data not available/n", emptyFieldTestJob.toString());
+        assertEquals("\nID: 5\nName: Data not available\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Data not available\nCore Competency: Data not available\n", emptyFieldTestJob.toString());
+    }
+
+    @Test
+    public void testToStringIdOnly() {
+        assertEquals("\nOOPS! This Job doesn't seem to exist.\n", jobOne.toString());
     }
 }
