@@ -1,6 +1,6 @@
 package org.launchcode.techjobs_oo.Tests;
 
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
 
@@ -8,14 +8,14 @@ import static org.junit.Assert.*;
 
 public class JobTest {
 
-    private Job jobOne;
-    private Job jobTwo;
-    private Job testJob;
-    private Job testJobCopy;
-    private Job emptyFieldTestJob;
+    private static Job jobOne;
+    private static Job jobTwo;
+    private static Job testJob;
+    private static Job testJobCopy;
+    private static Job emptyFieldTestJob;
 
-    @Before
-    public void createJobObjects() {
+    @BeforeClass
+    public static void createJobObjects() {
         jobOne = new Job();
         jobTwo = new Job();
         testJob = new Job("Product Tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
@@ -25,11 +25,6 @@ public class JobTest {
 
     @Test
     public void testSettingJobId() {
-//        assertEquals(1, jobOne.getId());
-//        assertEquals(2, jobTwo.getId());
-//        assertEquals(3, testJob.getId());
-//        assertEquals(4, testJobCopy.getId());
-//        assertEquals(5, emptyFieldTestJob.getId());
         assertEquals(1, (jobTwo.getId() - jobOne.getId()), 0.001);
     }
 
