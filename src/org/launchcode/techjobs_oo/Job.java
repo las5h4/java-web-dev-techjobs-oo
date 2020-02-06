@@ -8,10 +8,10 @@ public class Job {
     private static int nextId = 1;
 
     private String name;
-    private JobDataLine employer;
-    private JobDataLine location;
-    private JobDataLine positionType;
-    private JobDataLine coreCompetency;
+    private Employer employer;
+    private Location location;
+    private PositionType positionType;
+    private CoreCompetency coreCompetency;
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
